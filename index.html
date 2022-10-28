@@ -17,23 +17,87 @@
           stylePresets: [
             {
               id: "elastic-desaturated-master",
-              name: "Elastic Light (master)",
+              name: "Light (elastic/prod)",
               type: "maplibre-gl",
-              url: "https://raw.githubusercontent.com/elastic/osm-bright-desaturated-gl-style/master/style.json",
+              url: "https://raw.githubusercontent.com/elastic/osm-bright-desaturated-gl-style/v1.9-omt/style.json",
             },
             {
               id: "elastic-classic",
-              name: "Elastic Classic (master)",
+              name: "Classic (elastic/prod)",
               type: "maplibre-gl",
-              url: "https://raw.githubusercontent.com/elastic/osm-bright-gl-style/master/style.json",
+              url: "https://raw.githubusercontent.com/elastic/osm-bright-gl-style/v1.9-omt/style.json",
             },
             {
               id: "elastic-dark",
-              name: "Elastic Dark (master)",
+              name: "Dark (elastic/prod)",
               type: "maplibre-gl",
-              url: "https://raw.githubusercontent.com/elastic/dark-matter-gl-style/master/style.json",
+              url: "https://raw.githubusercontent.com/elastic/dark-matter-gl-style/v1.8-omt/style.json",
+            },
+            {
+              id: "elastic-desaturated-dev",
+              name: "Light (jsanz/dev)",
+              type: "maplibre-gl",
+              url: "https://raw.githubusercontent.com/jsanz/osm-bright-desaturated-gl-style/dev/style.json",
             },
           ],
+          branchPatterns: [
+            {
+              type: "maplibre-gl",
+              styles: ["dark-matter", "osm-bright", "osm-bright-desaturated"],
+              pattern:
+                "https://raw.githubusercontent.com/elastic/{style}-gl-style/{branch}/style.json",
+            },
+            {
+              type: "maplibre-gl",
+              styles: ["dark-matter", "osm-bright", "osm-bright-desaturated"],
+              pattern:
+                "https://raw.githubusercontent.com/jsanz/{style}-gl-style/{branch}/style.json",
+            },
+          ],
+          gazetteer: {
+            Scenarios: [
+              { "Zoomed out": { pitch: 0, zoom: 10 } },
+              { "Zoomed in/Tilted": { pitch: 45, zoom: 16 } },
+            ],
+            Locations: [
+              {
+                "San Francisco - CA, US": {
+                  zoom: 18,
+                  center: { lng: -122.4193, lat: 37.7648 },
+                },
+              },
+              {
+                "Washington DC, US": {
+                  zoom: 12,
+                  center: { lng: -77.0435, lat: 38.9098 },
+                },
+              },
+              {
+                "Worcester - MA, US": {
+                  zoom: 10,
+                  center: { lng: -71.797028, lat: 42.254951 },
+                },
+              },
+              {
+                "Berlin, DE": {
+                  zoom: 10,
+                  center: { lng: 13.387871, lat: 52.517892 },
+                },
+              },
+              {
+                "Cairo, EG": {
+                  zoom: 10,
+                  center: { lng: 31.232758, lat: 30.052454 },
+                },
+              },
+              {
+                "Tokyo, JP": {
+                  zoom: 10,
+                  center: { lng: 139.772, lat: 35.642 },
+                },
+              },
+            ],
+          },
         },
       });
     </script>
