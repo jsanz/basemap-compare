@@ -1,0 +1,22 @@
+{
+  "name": "basemap-compare",
+  "version": "1.0.0",
+  "description": "A basemap tool based on Stamen Maperture",
+  "main": "src/app.js",
+  "repository": "git@github.com:jsanz/basemap-compare.git",
+  "author": "Jorge Sanz <jorge@jorgesanz.net>",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "maperture": "github:stamen/maperture#v0.10.1"
+  },
+  "devDependencies": {
+    "vite": "^3.2.0"
+  }
+}

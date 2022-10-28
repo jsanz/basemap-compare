@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Map compare</title>
+    <link rel="stylesheet" href="./node_modules/maperture/dist/bundle.css" />
+  </head>
+  <body>
+    <script type="module">
+      import { startApp } from "maperture/dist/bundle";
+
+      startApp(document.body, {
+        localConfig: {
+          mapboxGlAccessToken:
+            "pk.eyJ1IjoieHVyeG9zYW56IiwiYSI6Ii1ObkhtWkUifQ.BK7TVbrk0v0-1NVn_ndWZw",
+          stylePresets: [
+            {
+              id: "elastic-desaturated-master",
+              name: "Elastic Light (master)",
+              type: "maplibre-gl",
+              url: "https://raw.githubusercontent.com/elastic/osm-bright-desaturated-gl-style/master/style.json",
+            },
+            {
+              id: "elastic-classic",
+              name: "Elastic Classic (master)",
+              type: "maplibre-gl",
+              url: "https://raw.githubusercontent.com/elastic/osm-bright-gl-style/master/style.json",
+            },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>
